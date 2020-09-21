@@ -6,7 +6,7 @@ const fi = (function() {
 
     each: function(collection, fn) {
       const newCollection = (collection instanceof Array) ? collection.slice() : Object.values(collection)
- 
+
         for (let i = 0; i < newCollection.length; i++) {
         fn(newCollection[i])
         }
@@ -31,18 +31,18 @@ const fi = (function() {
 				acc = newCollection[0]
 				newCollection = collection.slice(1)
       }
-      
+
       for (let i = 0; i < newCollection.length; i++){
         acc = callback(acc, newCollection[i], collection)
       }
-      return acc 
+      return acc
     },
 
     find: function(collection, predicate) {
       for (let i = 0; i < collection.length; i++) {
-        if (predicate(collection[i])) { 
+        if (predicate(collection[i])) {
           return collection[i]
-        }  
+        }
       }
       return undefined
     },
@@ -77,10 +77,10 @@ const fi = (function() {
     last: function(array, n = 1) {
       if (n == 1) {
         return array[array.length - n]
-      } 
-      else { 
+      }
+      else {
         return array.slice(array.length - n)
-      } 
+      }
     },
 
     compact: function(array) {
@@ -91,7 +91,7 @@ const fi = (function() {
         }
       }
       return newArray
-    }, 
+    },
 
     sortBy: function(array,fn) {
       let newArray = [...array]
@@ -104,7 +104,7 @@ const fi = (function() {
       let newArray = []
       if (shallow) {
         newArray = array.flat(1)
-      } 
+      }
       else {
         newArray = array.flat(Infinity)
       }
@@ -125,7 +125,7 @@ const fi = (function() {
       for (let key in obj) {
         values.push(obj[key])
       }
-      return values 
+      return values
     },
 
     functions: function(obj) {
